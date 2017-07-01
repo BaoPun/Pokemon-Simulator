@@ -2,7 +2,7 @@ CC=g++ -Wall
 exe=Pokemon
 
 $(exe): Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o play.o
-	$(CC) Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o -o $(exe)
+	$(CC) Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o play.o -o $(exe)
 Trainer.o: Trainer.cpp
 	$(CC) -c Trainer.cpp
 Pokemon.o: Pokemon.cpp
