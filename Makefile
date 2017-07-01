@@ -1,7 +1,7 @@
 CC=g++ -Wall
 exe=Pokemon
 
-$(exe): Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o
+$(exe): Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o play.o
 	$(CC) Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o -o $(exe)
 Trainer.o: Trainer.cpp
 	$(CC) -c Trainer.cpp
@@ -25,6 +25,8 @@ Treecko.o: Treecko.cpp
 	$(CC) -c Treecko.cpp
 game.o: game.cpp
 	$(CC) -c game.cpp
+play.o: play.cpp
+	$(CC) -c play.cpp
 
 clean:
 	rm -f $(exe) *.o
