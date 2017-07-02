@@ -5,6 +5,7 @@ Game::Game() : Bao()
 	Route3 = new Field**[35];
 	for(int i = 0; i < 35; i++)
 		Route3[i] = new Field*[35];
+	
 }
 
 Game::~Game()
@@ -22,9 +23,9 @@ void Game::set_route3()
 	for(int i = 0; i < 35; i++){
 		for(int j = 0; j < 35; j++){
 			if(i == 0 || (i == 34 && j != 17) || j == 0 || j == 34)
-				Route3[i][j] = new Wall();
+				this->Route3[i][j] = new Wall();
 			else{
-				Route3[i][j] = new Space();
+				this->Route3[i][j] = new Space();
 				if(i == 34 && j == 17)
 					Route3[i][j]->set_location('B');
 				else
