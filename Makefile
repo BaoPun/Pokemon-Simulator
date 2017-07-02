@@ -1,8 +1,8 @@
 CC=g++ -Wall
 exe=Pokemon
 
-$(exe): Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o play.o
-	$(CC) Trainer.o Pokemon.o Pokeball.o Field.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o play.o -o $(exe)
+$(exe): Trainer.o Pokemon.o Pokeball.o Field.o Wall.o Space.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o play.o
+	$(CC) Trainer.o Pokemon.o Pokeball.o Field.o Wall.o Space.o Froakie.o Bagon.o Honedge.o Larvitar.o Starly.o Treecko.o game.o play.o -o $(exe)
 Trainer.o: Trainer.cpp
 	$(CC) -c Trainer.cpp
 Pokemon.o: Pokemon.cpp
@@ -11,6 +11,10 @@ Pokeball.o: Pokeball.cpp
 	$(CC) -c Pokeball.cpp
 Field.o: Field.cpp
 	$(CC) -c Field.cpp
+Wall.o: Wall.cpp
+	$(CC) -c Wall.cpp
+Space.o: Space.cpp
+	$(CC) -c Space.cpp
 Froakie.o: Froakie.cpp
 	$(CC) -c Froakie.cpp
 Bagon.o: Bagon.cpp
