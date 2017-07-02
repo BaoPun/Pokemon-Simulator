@@ -14,6 +14,7 @@ class Pokemon
 {
 	protected:
 		int ATK, DEF, SPD;
+		
 
 
 	public:

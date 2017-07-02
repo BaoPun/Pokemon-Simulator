@@ -8,7 +8,20 @@
 #include "./Larvitar.h"
 #include "./Treecko.h"
 #include "./Trainer.h"
-#include "./Pokeball.h"
-#include "./Field.h"
+#include "./Wall.h"
+#include "./Space.h"
+
+class Game
+{
+	private:
+		Field ***Route3;
+		Trainer Bao;
+
+	public:
+		Game();
+		~Game();
+		void set_route3();
+		void view_route3();
+};
 
 #endif
