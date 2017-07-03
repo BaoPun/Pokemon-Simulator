@@ -3,4 +3,11 @@
 
 #include "./Pokemon.h"
 
+class Froakie : public Pokemon
+{
+	public:
+		Froakie();
+
+};
+
 #endif
