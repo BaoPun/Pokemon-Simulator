@@ -16,12 +16,12 @@ class Game
 	private:
 		Field ***Route3;
 		Trainer Bao;
-		Treecko treecko;
+		/*Treecko treecko;
 		Bagon bagon;
 		Froakie froakie;
 		Starly starly;
 		Honedge honedge;
-		Larvitar larvitar;
+		Larvitar larvitar;*/
 	public:
 		Game();
 		~Game();
