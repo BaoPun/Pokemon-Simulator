@@ -26,10 +26,18 @@ void Game::set_route3()
 				this->Route3[i][j] = new Wall();
 			else{
 				this->Route3[i][j] = new Space();
-				if(i == 34 && j == 17)
+				/*set player space*/
+				if(i == Bao.get_x_coordinate() && j == Bao.get_y_coordinate())
 					Route3[i][j]->set_location('B');
-				else
-					Route3[i][j]->set_location(' ');
+				/*set multiple patches of grass*/
+				if(i > 2 && i < 9 && j > 5 && j < 14)
+					Route3[i][j]->set_location('W');
+				if(i > 13 && i < 26 && j > 1 && j < 6)
+					Route3[i][j]->set_location('W');
+				if(i > 11 && i < 15 && j > 23 && j < 33)
+					Route3[i][j]->set_location('W');
+				if(i > 20 && i < 26 && j > 18 && j < 24)
+					Route3[i][j]->set_location('W');
 			}
 		}
 	}
