@@ -3,8 +3,10 @@
 Froakie::Froakie()
 {
 	name = "Froakie";
-	ATK = 15;
-	DEF = 10;
+	ATK = 16;
+	DEF = 8;
 	SPD = 15;
-	HP = 20;
+	HP = 21;
+	catch_rate = 25;
+	x = y = 0;
 }

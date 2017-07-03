@@ -3,8 +3,10 @@
 Bagon::Bagon()
 {
 	name = "Bagon";
-	ATK = 15;
-	DEF = 10;
-	SPD = 15;
-	HP = 20;
+	ATK = 18;
+	DEF = 12;
+	SPD = 9;
+	HP = 25;
+	catch_rate = 10;
+	x = y = 0;
 }

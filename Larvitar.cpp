@@ -3,8 +3,10 @@
 Larvitar::Larvitar()
 {
 	name = "Larvitar";
-	ATK = 15;
-	DEF = 10;
-	SPD = 15;
-	HP = 20;
+	ATK = 19;
+	DEF = 16;
+	SPD = 6;
+	HP = 24;
+	catch_rate = 7;
+	x = y = 0;
 }
