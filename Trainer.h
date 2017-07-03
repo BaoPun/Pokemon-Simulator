@@ -23,8 +23,9 @@ class Trainer
 		int get_x_coordinate();
 		int get_y_coordinate();
 		void set_coordinates(int, int);
-		int increase_pokeball_count();
-		int decrease_pokeball_count();
+		int get_pokeball_count();
+		void increase_pokeball_count();
+		void decrease_pokeball_count();
 		void add_pokemon(Pokemon);
 		void view_current_pokemon();
 

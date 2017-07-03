@@ -32,14 +32,19 @@ void Trainer::set_coordinates(int xp, int yp)
 	y = yp;
 }
 
-int Trainer::increase_pokeball_count()
+int Trainer::get_pokeball_count()
 {
-	return pokeball_count++;
+	return pokeball_count;
 }
 
-int Trainer::decrease_pokeball_count()
+void Trainer::increase_pokeball_count()
 {
-	return pokeball_count--;
+	pokeball_count++;
+}
+
+void Trainer::decrease_pokeball_count()
+{
+	pokeball_count--;
 }
 
 void Trainer::add_pokemon(Pokemon p)

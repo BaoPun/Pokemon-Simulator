@@ -24,8 +24,8 @@ class Game
 		void choose_starter_pokemon();
 		void view_current_pokemon();
 		void move_character();
-		/*int check_grass_encounter(int);*/
-
+		int wild_encounter();
+		int wild_pokemon_battle(int);
 
 
 		void pokemon_game();

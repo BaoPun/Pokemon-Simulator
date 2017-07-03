@@ -25,9 +25,6 @@ void Game::set_route3()
 				this->Route3[i][j] = new Wall();
 			else{
 				this->Route3[i][j] = new Space();
-				/*set player space*/
-				if(i == Bao.get_x_coordinate() && j == Bao.get_y_coordinate())
-					Route3[i][j]->set_location('B');
 				/*set multiple patches of grass*/
 				if(i > 2 && i < 9 && j > 5 && j < 14)
 					Route3[i][j]->set_location('W');
@@ -40,6 +37,9 @@ void Game::set_route3()
 				/*set a pokemon center and store*/
 				if(i == 11 && j == 11)
 					Route3[i][j]->set_location('C');
+				/*set player space*/
+				if(i == Bao.get_x_coordinate() && j == Bao.get_y_coordinate())
+					Route3[i][j]->set_location('B');
 			}
 		}
 	}
@@ -52,6 +52,12 @@ void Game::view_route3()
 			cout << Route3[i][j]->get_location() << " ";
 		cout << endl;
 	}
+	/*cout << "Treecko coordinates: " << treecko.get_x() << " " << treecko.get_y() << endl;
+	cout << "Bagon coordinates: " << bagon.get_x() << " " << bagon.get_y() << endl;
+	cout << "Froakie coordinates: " << froakie.get_x() << " " << froakie.get_y() << endl;
+	cout << "Honedge coordinates: " << honedge.get_x() << " " << honedge.get_y() << endl;
+	cout << "Larvitar coordinates: " << larvitar.get_x() << " " << larvitar.get_y() << endl;
+	cout << "Starly coordinates: " << starly.get_x() << " " << starly.get_y() << endl;*/
 }
 
 void Game::choose_starter_pokemon()
@@ -84,7 +90,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == bagon.get_x() && y == bagon.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == bagon.get_x() && y == bagon.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -92,7 +98,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -100,7 +106,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y()) || (x == honedge.get_x() && y == honedge.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y()) && (x == honedge.get_x() && y == honedge.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -108,7 +114,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y()) || (x == honedge.get_x() && y == honedge.get_y()) || (x == larvitar.get_x() && y == larvitar.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y()) && (x == honedge.get_x() && y == honedge.get_y()) && (x == larvitar.get_x() && y == larvitar.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -130,7 +136,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -138,7 +144,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == froakie.get_x() && y == froakie.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == froakie.get_x() && y == froakie.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -146,7 +152,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == froakie.get_x() && y == froakie.get_y()) || (x == honedge.get_x() && y == honedge.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == froakie.get_x() && y == froakie.get_y()) && (x == honedge.get_x() && y == honedge.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -154,7 +160,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == froakie.get_x() && y == froakie.get_y()) || (x == honedge.get_x() && y == honedge.get_y()) || (x == larvitar.get_x() && y == larvitar.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == froakie.get_x() && y == froakie.get_y()) && (x == honedge.get_x() && y == honedge.get_y()) && (x == larvitar.get_x() && y == larvitar.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -175,7 +181,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -183,7 +189,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -191,7 +197,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == honedge.get_x() && y == honedge.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == honedge.get_x() && y == honedge.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -199,7 +205,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == honedge.get_x() && y == honedge.get_y()) || (x == larvitar.get_x() && y == larvitar.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == honedge.get_x() && y == honedge.get_y()) && (x == larvitar.get_x() && y == larvitar.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -220,7 +226,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -228,7 +234,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -236,7 +242,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -244,7 +250,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y()) || (x == larvitar.get_x() && y == larvitar.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y()) && (x == larvitar.get_x() && y == larvitar.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -265,7 +271,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -273,7 +279,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -281,7 +287,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -289,7 +295,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y()) || (x == honedge.get_x() && y == honedge.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y()) && (x == honedge.get_x() && y == honedge.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -310,7 +316,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -318,7 +324,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -326,7 +332,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -334,7 +340,7 @@ void Game::choose_starter_pokemon()
 
 		x = rand()%35;
 		y = rand()%35;
-		while(Route3[x][y]->get_location() != 'W' || (x == treecko.get_x() && y == treecko.get_y()) || (x == bagon.get_x() && y == bagon.get_y()) || (x == froakie.get_x() && y == froakie.get_y()) || (x == honedge.get_x() && y == honedge.get_y())){
+		while(Route3[x][y]->get_location() != 'W' && (x == treecko.get_x() && y == treecko.get_y()) && (x == bagon.get_x() && y == bagon.get_y()) && (x == froakie.get_x() && y == froakie.get_y()) && (x == honedge.get_x() && y == honedge.get_y())){
 			x = rand()%35;
 			y = rand()%35;
 		}
@@ -366,6 +372,11 @@ void Game::move_character()
 				Route3[Bao.get_x_coordinate() - 1][Bao.get_y_coordinate()]->set_location('B');
 				Bao.set_coordinates(Bao.get_x_coordinate() - 1, Bao.get_y_coordinate());
 			}
+			else if(Route3[Bao.get_x_coordinate() - 1][Bao.get_y_coordinate()]->get_location() == 'C')
+				cout << "You have entered the Pokemon Center" << endl;
+			else if(Route3[Bao.get_x_coordinate() - 1][Bao.get_y_coordinate()]->get_location() == 'W'){
+				Bao.set_coordinates(Bao.get_x_coordinate() - 1, Bao.get_y_coordinate());
+			}
 
 		}
 
@@ -377,6 +388,11 @@ void Game::move_character()
 			if(Route3[Bao.get_x_coordinate() + 1][Bao.get_y_coordinate()]->get_location() == ' '){
 				Route3[Bao.get_x_coordinate()][Bao.get_y_coordinate()]->set_location(' ');
 				Route3[Bao.get_x_coordinate() + 1][Bao.get_y_coordinate()]->set_location('B');
+				Bao.set_coordinates(Bao.get_x_coordinate() + 1, Bao.get_y_coordinate());
+			}
+			else if(Route3[Bao.get_x_coordinate() + 1][Bao.get_y_coordinate()]->get_location() == 'C')
+				cout << "You have entered the Pokemon Center" << endl;
+			else if(Route3[Bao.get_x_coordinate() + 1][Bao.get_y_coordinate()]->get_location() == 'W'){
 				Bao.set_coordinates(Bao.get_x_coordinate() + 1, Bao.get_y_coordinate());
 			}
 		}
@@ -391,6 +407,11 @@ void Game::move_character()
 				Route3[Bao.get_x_coordinate()][Bao.get_y_coordinate() - 1]->set_location('B');
 				Bao.set_coordinates(Bao.get_x_coordinate(), Bao.get_y_coordinate() - 1);
 			}
+			else if(Route3[Bao.get_x_coordinate()][Bao.get_y_coordinate() - 1]->get_location() == 'C')
+				cout << "You have entered the Pokemon Center" << endl;
+			else if(Route3[Bao.get_x_coordinate()][Bao.get_y_coordinate() - 1]->get_location() == 'W'){
+				Bao.set_coordinates(Bao.get_x_coordinate(), Bao.get_y_coordinate() - 1);
+			}
 		}
 
 	}
@@ -403,35 +424,218 @@ void Game::move_character()
 				Route3[Bao.get_x_coordinate()][Bao.get_y_coordinate() + 1]->set_location('B');
 				Bao.set_coordinates(Bao.get_x_coordinate(), Bao.get_y_coordinate() + 1);
 			}
+			else if(Route3[Bao.get_x_coordinate()][Bao.get_y_coordinate() + 1]->get_location() == 'C')
+				cout << "You have entered the Pokemon Center" << endl;
+			else if(Route3[Bao.get_x_coordinate()][Bao.get_y_coordinate() + 1]->get_location() == 'W'){
+				Bao.set_coordinates(Bao.get_x_coordinate(), Bao.get_y_coordinate() + 1);
+			}
 		}
 
 	}
 }
 
-/*int Game::check_grass_encounter(int d)
+int Game::wild_encounter()
 {
+	if(Bao.get_x_coordinate() == treecko.get_x() && Bao.get_y_coordinate() == treecko.get_y()){
+		cout << "A wild Treecko has appeared!" << endl;
+		return 1;
+	}
+	if(Bao.get_x_coordinate() == bagon.get_x() && Bao.get_y_coordinate() == bagon.get_y()){
+		cout << "A wild Bagon has appeared!" << endl;
+		return 2;
+	}
+	if(Bao.get_x_coordinate() == froakie.get_x() && Bao.get_y_coordinate() == froakie.get_y()){
+		cout << "A wild Froakie has appeared!" << endl;
+		return 3;
+	}
+	if(Bao.get_x_coordinate() == honedge.get_x() && Bao.get_y_coordinate() == honedge.get_y()){
+		cout << "A wild Honedge has appeared!" << endl;
+		return 4;
+	}
+	if(Bao.get_x_coordinate() == larvitar.get_x() && Bao.get_y_coordinate() == larvitar.get_y()){
+		cout << "A wild Larvitar has appeared!" << endl;
+		return 5;
+	}
+	if(Bao.get_x_coordinate() == starly.get_x() && Bao.get_y_coordinate() == starly.get_y()){
+		cout << "A wild Starly has appeared!" << endl;
+		return 6;
+	}
+	return 0;
+}
 
-}*/
-
-
-
-
-
-
+int Game::wild_pokemon_battle(int w)
+{
+	system("clear");
+	int end = 0, catched, choice;
+	if(w == 1){
+		cout << "Do you want to run(1) or catch(2)? ";
+		cin >> choice;
+		while(choice != 1 && choice != 2){
+			cout << "Do you want to run(1) or catch(2)? ";
+			cin >> choice;
+		}
+		if(choice == 1)
+			cout << "You ran away!" << endl;
+		else{
+			if(Bao.get_pokeball_count() == 0)
+				cout << "But you have no more Poke balls..." << endl;
+			else{
+				Bao.decrease_pokeball_count();
+				catched = treecko.check_if_catched();
+				if(catched == 0)
+					return 1;
+				else{
+					Bao.add_pokemon(treecko);
+					treecko.set_coordinates(0, 0);
+				}
+			}
+		}
+	}
+	if(w == 2){
+		cout << "Do you want to run(1) or catch(2)? ";
+		cin >> choice;
+		while(choice != 1 && choice != 2){
+			cout << "Do you want to run(1) or catch(2)? ";
+			cin >> choice;
+		}
+		if(choice == 1)
+			cout << "You ran away!" << endl;
+		else{
+			if(Bao.get_pokeball_count() == 0)
+				cout << "But you have no more Poke balls..." << endl;
+			else{
+				Bao.decrease_pokeball_count();
+				catched = bagon.check_if_catched();
+				if(catched == 0)
+					return 1;
+				else{
+					Bao.add_pokemon(bagon);
+					bagon.set_coordinates(0, 0);
+				}
+			}
+		}
+	}
+	if(w == 3){
+		cout << "Do you want to run(1) or catch(2)? ";
+		cin >> choice;
+		while(choice != 1 && choice != 2){
+			cout << "Do you want to run(1) or catch(2)? ";
+			cin >> choice;
+		}
+		if(choice == 1)
+			cout << "You ran away!" << endl;
+		else{
+			if(Bao.get_pokeball_count() == 0)
+				cout << "But you have no more Poke balls..." << endl;
+			else{
+				Bao.decrease_pokeball_count();
+				catched = froakie.check_if_catched();
+				if(catched == 0)
+					return 1;
+				else{
+					Bao.add_pokemon(froakie);
+					froakie.set_coordinates(0, 0);
+				}
+			}
+		}
+	}
+	if(w == 4){
+		cout << "Do you want to run(1) or catch(2)? ";
+		cin >> choice;
+		while(choice != 1 && choice != 2){
+			cout << "Do you want to run(1) or catch(2)? ";
+			cin >> choice;
+		}
+		if(choice == 1)
+			cout << "You ran away!" << endl;
+		else{
+			if(Bao.get_pokeball_count() == 0)
+				cout << "But you have no more Poke balls..." << endl;
+			else{
+				Bao.decrease_pokeball_count();
+				catched = honedge.check_if_catched();
+				if(catched == 0)
+					return 1;
+				else{
+					Bao.add_pokemon(honedge);
+					honedge.set_coordinates(0, 0);
+				}
+			}
+		}
+	}
+	if(w == 5){
+		cout << "Do you want to run(1) or catch(2)? ";
+		cin >> choice;
+		while(choice != 1 && choice != 2){
+			cout << "Do you want to run(1) or catch(2)? ";
+			cin >> choice;
+		}
+		if(choice == 1)
+			cout << "You ran away!" << endl;
+		else{
+			if(Bao.get_pokeball_count() == 0)
+				cout << "But you have no more Poke balls..." << endl;
+			else{
+				Bao.decrease_pokeball_count();
+				catched = larvitar.check_if_catched();
+				if(catched == 0)
+					return 1;
+				else{
+					Bao.add_pokemon(larvitar);
+					larvitar.set_coordinates(0, 0);
+				}
+			}
+		}
+	}
+	if(w == 6){
+		cout << "Do you want to run(1) or catch(2)? ";
+		cin >> choice;
+		while(choice != 1 && choice != 2){
+			cout << "Do you want to run(1) or catch(2)? ";
+			cin >> choice;
+		}
+		if(choice == 1)
+			cout << "You ran away!" << endl;
+		else{
+			if(Bao.get_pokeball_count() == 0)
+				cout << "But you have no more Poke balls..." << endl;
+			else{
+				Bao.decrease_pokeball_count();
+				catched = starly.check_if_catched();
+				if(catched == 0)
+					return 1;
+				else{
+					Bao.add_pokemon(starly);
+					starly.set_coordinates(0, 0);
+				}
+			}
+		}
+	}
+	return end;
+}
 
 
 
 void Game::pokemon_game()
 {
-	int continues = 1;
+	int continues = 1, wild, battle;
 
 	set_route3();
 	choose_starter_pokemon();
 
 	while(continues == 1){
+		set_route3();
 		view_current_pokemon();
 		view_route3();
 		move_character();
+		wild = wild_encounter();
+		if(wild != 0){
+			do{
+				battle = wild_pokemon_battle(wild);
+			}while(battle != 0);
+		}
+
+
 		cout << "Continue? (1 yes): ";
 		cin >> continues;
 	}
