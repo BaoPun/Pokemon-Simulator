@@ -1,12 +1,6 @@
 #ifndef GAMEH
 #define GAMEH
 
-#include "./Bagon.h"
-#include "./Froakie.h"
-#include "./Starly.h"
-#include "./Honedge.h"
-#include "./Larvitar.h"
-#include "./Treecko.h"
 #include "./Trainer.h"
 #include "./Wall.h"
 #include "./Space.h"
@@ -27,6 +21,14 @@ class Game
 		~Game();
 		void set_route3();
 		void view_route3();
+		void choose_starter_pokemon();
+		void view_current_pokemon();
+		void move_character();
+		/*int check_grass_encounter(int);*/
+
+
+
+		void pokemon_game();
 };
 
 #endif
