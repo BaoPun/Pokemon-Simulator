@@ -22,6 +22,7 @@ class Game
 		void set_route3();
 		void view_route3();
 		void choose_starter_pokemon();
+		void allocate_positions(int);
 		void view_current_pokemon();
 		void move_character();
 		int wild_encounter();
